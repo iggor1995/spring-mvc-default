@@ -1,0 +1,8 @@
+beans\configuration\WebConfiguration.class
+beans\controller\App.class
+beans\configuration\SpringWebConfig.class
+beans\exception\SomethingWrongException.class
+beans\repository\UserRepository.class
+beans\entity\User.class
+beans\service\AppService.class
+beans\AppPages.class
