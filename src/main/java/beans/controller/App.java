@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Collection;
 
@@ -23,9 +24,10 @@ public class App {
     }
 
     @GetMapping("/home")
-    public String getHome(@ModelAttribute("model") ModelMap model) {
-        model.addAttribute("users", appService.list());
-        return AppPages.LOGIN;
+    public ModelAndView getHome() {
+        ModelMap modelMap = new ModelMap();
+        modelMap.addAttribute("users", appService.list());
+        return new ModelAndView(AppPages.LOGIN,modelMap);
     }
 
     @PostMapping
@@ -33,12 +35,5 @@ public class App {
         System.out.println(user);
         appService.save(user);
         return AppPages.redirect(AppPages.HOME_URL);
-    }
-
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String getUsers(@ModelAttribute("model") ModelMap model){
-        Collection<User> users = appService.list();
-        model.addAttribute("users", users);
-        return AppPages.LOGIN;
     }
 }

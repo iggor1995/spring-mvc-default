@@ -18,7 +18,7 @@ public class AppService {
 
     public void save(User user) throws SomethingWrongException {
         if (Objects.isNull(user)) {
-            throw new IllegalArgumentException("Provided user is null");
+            throw new SomethingWrongException("Provided user is null");
         }
         userRepository.save(user);
     }

@@ -23,6 +23,6 @@
     </context-param>
     <servlet-mapping>
         <servlet-name>dispatcherServlet</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>

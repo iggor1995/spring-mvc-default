@@ -1,8 +1,10 @@
-beans\configuration\WebConfiguration.class
 beans\controller\App.class
 beans\configuration\SpringWebConfig.class
 beans\exception\SomethingWrongException.class
+beans\configuration\DbSessionFactory$1.class
+beans\configuration\DbSessionFactory.class
 beans\repository\UserRepository.class
 beans\entity\User.class
 beans\service\AppService.class
+beans\configuration\DataSourceConfiguration.class
 beans\AppPages.class
